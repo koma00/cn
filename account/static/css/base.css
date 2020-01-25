@@ -2,12 +2,26 @@ a {
     text-decoration: None;
 }
 
-.menu {
-    display: inline-block;
-    margin-right: 20px;
+body {
+    max-width: 750px;
+    margin: auto;
+}
+
+.header {
+    width: 100%;
+}
+
+.logo {
+    float: left;
+    width: 10%;
+}
+
+.menu ul {
+    float: left;
 }
 
 .menu li {
+    float: left;
     list-style-type: none;
     display: inline;
     margin-right: 10px;
@@ -25,9 +39,14 @@ a {
 }
 
 .user {
-    margin-left: 25px;
+    float: right;
 }
 
 .user a {
     margin-left: 15px;
+}
+
+.content {
+    display: inline-block;
+    width: 100%;
 }
