@@ -1,0 +1,33 @@
+a {
+    text-decoration: None;
+}
+
+.menu {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu li {
+    list-style-type: none;
+    display: inline;
+    margin-right: 10px;
+}
+
+.menu li:last-child {
+    margin-right: 0px;
+}
+
+.selected a {
+    color: #4f4f4f;
+}
+.selected a:visited{
+    color: #4f4f4f;
+}
+
+.user {
+    margin-left: 25px;
+}
+
+.user a {
+    margin-left: 15px;
+}
