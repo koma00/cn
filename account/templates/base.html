@@ -55,7 +55,19 @@
                         <a href="{% url 'register' %}">Registration</a>
                     {% endif %}
                 </div>
-                <div class="content col-10">{% block content %}{% endblock %}</div>
+                <div class="content col-10">
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <li class="{{ message.tags }}">
+                                    {{ message|safe }}
+                                    <a href="#" class="close">x</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    {% block content %}{% endblock %}
+                </div>
             </div>
         </div>
         <!-- Optional JavaScript -->
