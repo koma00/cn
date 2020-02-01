@@ -3,3 +3,7 @@ install:
 	. venv/bin/activate; \
 	python3 -m pip install --upgrade pip; \
 	pip install -r requirements.txt
+
+run:
+	. venv/bin/activate; \
+	python manage.py runserver 8080
