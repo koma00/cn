@@ -33,7 +33,10 @@ def user_login(request):
 
 @login_required
 def dashboard(request):
-    return render(request, 'account/dashboard.html', {'section': 'dashboard', 'profile': Profile.objects.get(user=request.user)})
+    if request.user:
+        return render(request, 'account/dashboard.html', {'section': 'dashboard', 'profile': Profile.objects.get(user=request.user)})
+    else:
+        user_login(request)
 
 
 def register(request):
