@@ -27,7 +27,7 @@
                             <a href="#">Images</a>
                         </li>
                         <li {% if section == "people" %} class="selected" {% endif %}>
-                            <a href="#">People</a>
+                            <a href="">People</a>
                         </li>
                     </ul>
                 {% endif %}
@@ -48,7 +48,7 @@
                             <li><a href="{% url 'dashboard' %}">My page</a></li>
                             <li><a href="#">Friends</a></li>
                             <li><a href="#">Messages</a></li>
-                            <li><a href="#">Settings</a></li>
+                            <li><a href="{% url 'edit' %}">Settings</a></li>
                         </ul>
                     {% else %}
                         <a href="{% url 'login' %}">Log-in</a>
