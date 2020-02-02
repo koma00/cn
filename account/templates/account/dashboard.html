@@ -12,6 +12,9 @@
             {% if profile.date_of_birth %}
                 <p>Date of birth: {{ profile.date_of_birth }}</p>
             {% endif %}
+            {% if profile.sex != 'none' %}
+                <p>Sex: {{ profile.sex }}</p>
+            {% endif %}
             <!--<h1>Dashboard</h1>
             <p>Welcome to your dashboard.
                 You can <a href="{% url 'edit' %}">edit your profile</a> or
