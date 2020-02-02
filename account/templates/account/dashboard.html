@@ -5,7 +5,9 @@
 {% block content %}
     <div class="row">
         <div class="col-4">
-            l
+            <div class="user_foto">
+                <img src="{{ profile.photo }}">
+            </div>
         </div>
         <div class="col-8">
             <h5>{{ request.user.first_name }} {{ request.user.last_name }}</h5>
