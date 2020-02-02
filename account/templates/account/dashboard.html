@@ -12,10 +12,10 @@
         <div class="col-8">
             <h5>{{ request.user.first_name }} {{ request.user.last_name }}</h5>
             {% if profile.date_of_birth %}
-                <p>Date of birth: {{ profile.date_of_birth }}</p>
+                <p class="user_info">Date of birth: {{ profile.date_of_birth }}</p>
             {% endif %}
             {% if profile.sex != 'none' %}
-                <p>Sex: {{ profile.sex }}</p>
+                <p class="user_info">Sex: {{ profile.sex }}</p>
             {% endif %}
             <!--<h1>Dashboard</h1>
             <p>Welcome to your dashboard.

@@ -26,6 +26,18 @@
     list-style: None;
 }
 
+.user_foto {
+    margin: 5px;
+}
+
+.user_foto img {
+    width: 250px;
+}
+
+.user_info {
+    margin: 0;
+}
+
 /*.logo {*/
 /*    float: left;*/
 /*    width: 10%;*/
