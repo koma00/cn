@@ -6,7 +6,11 @@
     <div class="row">
         <div class="col-4">
             <div class="user_foto">
-                <img src="{{ profile.photo }}">
+                {% if profile.photo %}
+                    <img src="{{ profile.photo.url }}">
+                {% else %}
+                    <img src="/media/users/default_profile_photo.jpg">
+                {% endif %}
             </div>
         </div>
         <div class="col-8">
