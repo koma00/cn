@@ -7,9 +7,13 @@
     <p>You can edit your account using the following form:</p>
     <form action="." method="post" enctype="multipart/form-data">
         {{ password_form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" name="change_password" value="Change password"></p>
+    </form>
+    <form action="." method="post" enctype="multipart/form-data">
         {{ user_form.as_p }}
         {{ profile_form.as_p }}
         {% csrf_token %}
-        <p><input type="submit" value="Save changes"></p>
+        <p><input type="submit" name="save_changes" value="Save changes"></p>
     </form>
 {% endblock %}
