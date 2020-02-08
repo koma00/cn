@@ -58,28 +58,23 @@ def register(request):
 
 @login_required
 def edit(request):
+    password_form = PasswordEditForm(instance=request.user)
+    user_form = UserEditForm(instance=request.user)
+    profile_form = ProfileEditForm(instance=request.user.profile)
     if request.method == 'POST':
         if 'change_password' in request.POST:
             password_form = PasswordEditForm(instance=request.user, data=request.POST)
-            user_form = UserEditForm(instance=request.user)
-            profile_form = ProfileEditForm(instance=request.user.profile)
             if password_form.is_valid():
                 request.user.set_password(password_form.cleaned_data['password'])
                 messages.success(request, 'Password updated successfully')
         elif 'save_changes' in request.POST:
-            password_form = PasswordEditForm(instance=request.user)
-            user_form = UserEditForm(instance=request.user, data=request.POST)
             profile_form = ProfileEditForm(instance=request.user.profile,
-                                       data=request.POST,
-                                       files=request.FILES)
+                                           data=request.POST,
+                                           files=request.FILES)
             if user_form.is_valid() and profile_form.is_valid():
                 user_form.save()
                 profile_form.save()
                 messages.success(request, 'Profile updated successfully')
         else:
             messages.error(request, 'Error updating your profile')
-    else:
-        password_form = PasswordEditForm(instance=request.user)
-        user_form = UserEditForm(instance=request.user)
-        profile_form = ProfileEditForm(instance=request.user.profile)
     return render(request, 'account/edit.html', {'password_form': password_form, 'user_form': user_form, 'profile_form': profile_form})
