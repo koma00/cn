@@ -6,9 +6,9 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 @csrf_exempt
-def profile_detail(request):
+def profile_detail_id(request, id):
     try:
-        profile = Profile.objects.get(user=request.user)
+        profile = Profile.objects.get(user__id=id)
     # except Profile.DoesNotExist:
     except:
         return HttpResponse(status=404)
@@ -16,3 +16,7 @@ def profile_detail(request):
     if request.method == 'GET':
         serializer = ProfileSerializer(profile)
         return JsonResponse(serializer.data)
+
+@csrf_exempt
+def profile_detail(request):
+    return profile_detail_id(request, request.user.id)

@@ -23,4 +23,5 @@ from rest_framework.routers import DefaultRouter
 
 urlpatterns = [
     path('account/', account_views.profile_detail),
+    path('account/id<int:id>/', account_views.profile_detail_id),
 ]
