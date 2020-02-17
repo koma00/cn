@@ -7,7 +7,8 @@ install_django:
 
 install_vue:
 	npm install -g @vue/cli; \
-	npm install -g @vue/cli-init
+	npm install -g @vue/cli-init; \
+	npm install axios vue-axios --save
 
 run_django:
 	cd backend;\
